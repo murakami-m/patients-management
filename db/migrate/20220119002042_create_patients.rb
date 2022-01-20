@@ -8,7 +8,7 @@ class CreatePatients < ActiveRecord::Migration[6.0]
       t.integer    :age,                     null: false
       t.integer    :gender_id,               null: false
       t.string     :address,                 null: false
-      t.string     :desease,                 null: false
+      t.string     :disease,                 null: false
       t.integer    :doctor_id,               null: false
       t.integer    :ward_id,                 null: false
       t.string     :key_person_relationship, null: false
