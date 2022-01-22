@@ -15,7 +15,7 @@ class CreatePatients < ActiveRecord::Migration[6.0]
       t.text       :remarks
       t.string     :before_hospitalization,  null: false
       t.integer    :adjustment_manager_id      
-      t.date       :hospitalization_date,    null: false
+      t.date       :hospitalization_date
       t.date       :discharge_date
       t.integer    :state_id,                null: false
       t.timestamps

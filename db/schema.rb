@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2022_01_19_002042) do
     t.text "remarks"
     t.string "before_hospitalization", null: false
     t.integer "adjustment_manager_id"
-    t.date "hospitalization_date", null: false
+    t.date "hospitalization_date"
     t.date "discharge_date"
     t.integer "state_id", null: false
     t.datetime "created_at", precision: 6, null: false
