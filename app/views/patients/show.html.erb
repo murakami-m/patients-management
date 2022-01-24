@@ -75,4 +75,8 @@
       <td class="address"><%= @patient.address %></td>
     </tr>
   </table>
+  <div class="btn-group">
+    <%= button_to "転院調整ページへ移動", {controller: 'patients', action: 'edit'}, {method: :get} %>
+    <%= button_to "患者情報編集ページへ移動", {controller: 'patients', action: 'edit'}, {method: :get} %>
+  </div>
 </div>
