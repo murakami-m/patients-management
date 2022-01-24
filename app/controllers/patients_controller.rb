@@ -11,6 +11,10 @@ class PatientsController < ApplicationController
     Patient.create(patient_params)
   end
 
+  def show
+    @patient = Patient.find(params[:id])
+  end
+
   private
   
   def patient_params
