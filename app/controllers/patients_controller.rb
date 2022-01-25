@@ -7,10 +7,6 @@ class PatientsController < ApplicationController
     @patient = Patient.new
   end
 
-  # def create
-  #   Patient.create(patient_params)
-  #   @patient = Patient.new(params[:id])
-  # end
   def create
     @patient = Patient.new(patient_params)
     if @patient.save
@@ -34,6 +30,12 @@ class PatientsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @patient = Patient.find(params[:id])
+    @patient.destroy
+    redirect_to root_path
   end
 
   private
