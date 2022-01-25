@@ -7,8 +7,16 @@ class PatientsController < ApplicationController
     @patient = Patient.new
   end
 
+  # def create
+  #   Patient.create(patient_params)
+  #   @patient = Patient.new(params[:id])
+  # end
   def create
-    Patient.create(patient_params)
+    @patient = Patient.new(patient_params)
+    if @patient.save
+    else
+      render :new
+    end
   end
 
   def show
@@ -21,7 +29,6 @@ class PatientsController < ApplicationController
 
   def update
     @patient = Patient.find(params[:id])
-    @patient.update(patient_params)
     if @patient.update(patient_params)
       redirect_to patient_path
     else
@@ -32,6 +39,6 @@ class PatientsController < ApplicationController
   private
   
   def patient_params
-    params.require(:patient).permit(:number, :name, :name_kana, :birthday, :age, :gender_id, :address, :disease, :doctor_id, :ward_id, :key_person_relationship, :remarks, :before_hospitalization, :adjustment_manager_id, :state_id, )
+    params.require(:patient).permit(:number, :name, :name_kana, :birthday, :age, :gender_id, :address, :disease, :doctor_id, :ward_id, :key_person_relationship, :remarks, :before_hospitalization, :adjustment_manager_id, :state_id, :hospitalization_date, :discharge_date )
   end
 end
