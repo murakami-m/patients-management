@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
   root to: "patients#index"
-  resources :patients
+  resources :patients do
+    resources :accept_adjustments, only: :show
+  end
 end

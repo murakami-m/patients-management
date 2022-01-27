@@ -5,6 +5,7 @@ class Patient < ApplicationRecord
   belongs_to :ward
   belongs_to :adjustment_manager
   belongs_to :state
+  has_one :accept_adjustment
 
   with_options presence: true do
     validates :number 

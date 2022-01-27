@@ -1,0 +1,67 @@
+<div class="accept_adjustment-show">
+  <div class="title">
+    転院調整詳細
+  </div>
+  <div class="patient-show">
+    患者基本情報
+    <table class="table", border="1">
+      <tr>
+        <th> 項目 </th>
+        <th> 情報 </th>
+      </tr>
+      <tr>
+      <tr>
+        <td> 氏名
+        <td class="name"><%= @patient.name %></td>
+      </tr>
+      <tr>
+        <td> 氏名（カタカナ）
+        <td class="name-kana"><%= @patient.name_kana %></td>
+      </tr>
+      <tr>
+        <td> 年齢
+        <td class="age"><%= @patient.age %>歳</td>
+      </tr>
+      <tr>
+        <td> 性別
+        <td class="gender"><%= @patient.gender.name %></td>
+      </tr>
+      <tr>
+        <td> 住所
+        <td class="address"><%= @patient.address %></td>
+      </tr>
+      <tr>
+        <td> キーパーソン
+        <td class="key-perso-relationship"><%= @patient.key_person_relationship %></td>
+      </tr>
+      <tr>
+        <td> 家族背景・その他
+        <td class="remarks"><%= @patient.remarks %></td>
+      </tr>
+      <tr>
+        <td> 入院前（自宅or施設or病院)
+        <td class="before-hospitalization"><%= @patient.before_hospitalization %></td>
+      </tr>
+      <tr>
+        <td> 主病名
+        <td class="disease"><%= @patient.disease %></td>
+      </tr>
+      <tr>
+        <td> 主治医
+        <td class="doctor"><%= @patient.doctor.name %></td>
+      </tr>
+      <tr>
+        <td> 調整担当者
+        <td class="manager"><%= @patient.adjustment_manager.name %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="adjustment">
+    転院調整部分
+    <div class="expected_date">
+      入院希望日：
+      <%= l @accept_adjustment.accept_expected_date %>
+    </div>
+  </div>
+  
+</div>
