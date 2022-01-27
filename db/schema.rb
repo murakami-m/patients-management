@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_19_002042) do
+ActiveRecord::Schema.define(version: 2022_01_25_092251) do
+
+  create_table "accept_adjustments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.date "accept_expected_date", null: false
+    t.bigint "patient_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["patient_id"], name: "index_accept_adjustments_on_patient_id"
+  end
 
   create_table "patients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "number"
@@ -34,4 +42,5 @@ ActiveRecord::Schema.define(version: 2022_01_19_002042) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "accept_adjustments", "patients"
 end

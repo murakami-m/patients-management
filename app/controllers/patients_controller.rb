@@ -17,6 +17,7 @@ class PatientsController < ApplicationController
 
   def show
     @patient = Patient.find(params[:id])
+    @accept_adjustment = AcceptAdjustment.find(params[:id])
   end
 
   def edit
